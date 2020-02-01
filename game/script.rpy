@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define f = Character("Female Protagonist")
+define f = Character("Mindy")
+define bestie = Character("Ashleigh")
 
 
 # The game starts here.
@@ -14,20 +15,21 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene hall
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
-    play music "audio/untitled.mp3"
+    show couple happy at left
 
     # These display lines of dialogue.
+    play sound "audio/FemaleGasp.mp3"
+    f "Ash, meet my new man. He is totally not a Chad, his name is Dan"
 
-    f "You've created a new Ren'Py game."
-
-    f "Once you add a story, pictures, and music, you can release it to the world!"
+    show crying friend at right
+    play sound "audio/FemaleCrying.mp3"
+    bestie "He is so broken & BEAUTFIUL!"
 
     # This ends the game.
 
