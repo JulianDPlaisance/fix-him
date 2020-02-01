@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define f = Character("Female Protagonist")
 
 
 # The game starts here.
@@ -21,12 +21,13 @@ label start:
     # directory.
 
     show eileen happy
+    play music "audio/untitled.mp3"
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    f "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    f "Once you add a story, pictures, and music, you can release it to the world!"
 
     # This ends the game.
 
