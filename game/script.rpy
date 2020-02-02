@@ -16,12 +16,12 @@ default basketball = False
 
 label start:
 
-    play music "audio/Tune.mp3"
+    #play music "audio/Tune.mp3"
     jump Opening
 
 label Opening:
 
-#    scene classroom
+    scene classroom
     "First day of School: august 13th"
     p "mindy to the Principal's office"
     "mindy gets up from her chair, wondering what Principal Joe wants this time."
@@ -142,7 +142,7 @@ d "do you like sports?"
 
 menu: #danpoints
     "Sometimes I watch basketball with my dad.":
-        $ basketball = true
+        $ basketball = True
         jump basketball
     "That’s not really my thing.":
         jump thing
