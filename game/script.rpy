@@ -10,6 +10,8 @@ define a = Character("Ashleigh")
 # The game starts here.
 
 label start:
+    
+    play music "audio/Tune.mp3"
     jump classroomIntroducingAshleigh
 
     # Show a background. This uses a placeholder by default, but you can
