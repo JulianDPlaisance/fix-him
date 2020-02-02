@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -28,7 +28,7 @@ label Opening:
     p "mindy to the Principal's office"
     "mindy gets up from her chair, wondering what Principal Joe wants this time."
 
-    scene hallway
+    scene hall
 
     j "Good morning mindy!  How was your vacation?"
     m "It was nice, but I'm glad to be back.  did you need my help with something?"
@@ -36,7 +36,7 @@ label Opening:
     j "Try to make him feel welcome."
     j "dan, come on in."
 
-    #show abominationdan
+    show dan abom at left
 
     d "..."
     m "Hi I'm min-did you just move in next door?"
@@ -72,17 +72,17 @@ label ClassroomIntroducingashleigh:
     scene classroom
     a "Hey mindy!"
 
-    show ashleigh-intrigued at right
+    show ashleigh intrigued at right
 
     a "Who’s that hot guy you were with?"
-    hide ashleigh-intrigued
-    show ashleigh-shocked at left
+    hide ashleigh intrigued
+    show ashleigh shocked at left
 
     a "Where is he from?"
     a "Is he in our grade?"
     a "doyoureallythinkhelikesthecafeteriafood?"
-    hide ashleigh-shocked
-    show ashleigh-intrigued at right
+    hide ashleigh shocked
+    show ashleigh intrigued at right
 
     a "Tell. me. Everything."
     "Typical ashleigh. I’ve known her forever and of course she would ask me about any guy she saw me with."
@@ -98,11 +98,11 @@ menu:
 
 
 label continuedAshleigh:
-    hide ashleigh-intrigued
-    show ashleigh-apathetic at center
+    hide ashleigh intrigued
+    show ashleigh apathetic at center
     a "Ugh...this is why you’ve never had a boyfriend."
-    hide ashleigh-apathetic
-    show ashleigh-open-arms at center
+    hide ashleigh apathetic
+    show ashleigh open arms at center
     a "Well, since you’re neighbors and all...why don’t you ask him to walk to school with you tomorrow? maybe you can get to know him a little more?"
 
     menu: #ashpoints
@@ -114,31 +114,31 @@ label continuedAshleigh:
             jump idea
 
     label idea:
-    hide ashleigh-open-arms
-    show ashleigh-shocked at right
+    hide ashleigh open arms
+    show ashleigh shocked at right
     a "I can’t believe you finally listened to me! Good luck!"
-    hide ashleigh-shocked
+    hide ashleigh shocked
     jump Outroashleigh
 
     label friends:
-hide ashleigh-open-arms
-show ashleigh-open-arms at right
+hide ashleigh open arms
+show ashleigh open arms at right
 a "That’s my girl. Go get him!"
-hide ashleigh-open-arms
+hide ashleigh open arms
 jump Outroashleigh
 
 label Outroashleigh:
 
 "Well. I guess I’m walking him to school tomorrow."
-#show BlackScreen
+scene BlackScreen
 "ding-a-ling! Class is over!"
 
 label WalkingdanToClass:
     "September 2nd."
-#    scene Outside
+    scene Outside
     "dan keeps refusing to walk to school with me.  But today is the day, determination will get me through!"
 
-#    show abominationdan
+    show dan abom at left
 
     m "Hey dan I noticed you haven’t joined a club yet.  I have a brochure, let’s walk and talk."
     d "..."
@@ -158,8 +158,8 @@ menu: #danpoints
         jump thing
 
 label basketball:
-#hide abominationdan
-#show dan at left
+hide dan abom with dissolve
+show dan p1 at left
 d "me too. It’s been hard to keep up lately with the move and all though."
 jump ashleighSpring
 
@@ -168,16 +168,16 @@ label thing:
     jump ashleighSpring
 
 label ashleighSpring:
-show ashleigh-shocked at center
+show ashleigh shocked at center
 a "OmG I cannot believe you two are together!"
 "ashley… why…"
 m "Oh, dan, this is ashleigh. We’ve been friends since elementary school."
-#hide dan
-hide ashleigh-shocked
-#show dan
+hide dan p1 with dissolve
+hide ashleigh shocked
+show dan p2
 d "Oh, hi. mindy, I’ll see you around."
-#hide dan
-show ashleigh-open-arms at right
+hide dan with dissolve
+show ashleigh open arms at right
 a "So what were you two talking about? You two seemed pretty chummy."
 a "mindy spills the details."
 if basketball:
@@ -186,14 +186,14 @@ if basketball:
     a "Homecoming’s coming up."
     a "You know, He doesn’t talk to anyone else but you. Why don’t you ask him to go to the dance with you?"
     "man ashleigh is pushy recently"
-hide ashleigh-open-arms
-#scene BlackScreen
+hide ashleigh open arms
+scene BlackScreen
 p "ding-a-ling! Get those asses in those classes!"
 
 
 label Homecoming: # October 27th
 #    scene Homecoming
-#show dan
+show dan p1
 d "Hey, mindy. did you catch the season opening?"
 m "Of course! That was such an upset. did you see that bankshot? I had to stay up late to finish my chemistry homework because I couldn’t take my eyes off the game."
 d "Bankshot? Talk about that last minute three! That’s so unlike you to stay up watching basketball miss Class President."
@@ -208,13 +208,13 @@ menu:
             jump BreakingBad
 
 label BreakingBad:
-#    hide dan
-#    show abominationdan
+    hide dan p1 with dissolve
+    show dan abom
 
     d "Oh okay. I’m going with Jessica. I guess I’ll see you around the neighborhood."
     m "Okay, see you around."
-#hide abominationdan
-#scene BlackScreen
+hide dan abom with dissolve
+scene BlackScreen
 "mindy has fun at the homecoming dance and has a successful career. dan eventually drops out of school, and mindy loses contact with him."
 return
 
@@ -222,41 +222,41 @@ label danceballs:
     d "are you sure? I’m sure there’s plenty of people who would want to go with you..."
     m "Oh, I’m sure. You’re not getting out of it now."
 
-    #show dan at left
+    show dan p1 at left
 
     d "...Sure, I’d like to."
-    #hide dan
-    #show Smilingdan at center
+    hide dan p1
+    show dan awkward at center
     "Wow...I’ve never seen him smile like that."
-    #scene BlackScreen
+    scene BlackScreen
     p "ding-a-ling! Homecoming Bonecoming!"
-    #hide Smilingdan
+    hide dan awkward
 
 
 label LifeOnHolidays: # december 17th
-    #scene Outside
+    scene Outside
     "december 17th."
-    show ashleigh-shocked at right
+    show ashleigh shocked at right
 
     a "Oh mY GOd, you have been glued to dan since homecoming. You’re practically inseparable."
     a "I can’t believe it’s the holidays already. Woo hoo!  We can hangout during the break"
-    hide ashleigh-shocked
-    show ashleigh-intrigued at center
+    hide ashleigh shocked
+    show ashleigh intrigued at center
     a "Tell me how you and dan are celebrating. I want to live vicariously through you."
     m "Well, I was thinking we wou- Oh, hey dan."
-    hide ashleigh-intrigued
-    #show dan
-    show ashleigh-open-arms at center
+    hide ashleigh intrigued
+    show dan p1
+    show ashleigh open arms at center
     d "Hey, you two. What are your plans for the holidays?"
     a "Well, I know mindy has some plans for you."
     "Oh no, I have to shut her up. This is so embarrassing, ashleigh…"
     m "Oh, I have a lot of studying to do…"
-    hide ashleigh-open-arms
-    show ashleigh-shocked at left
+    hide ashleigh open arms
+    show ashleigh shocked at left
     a "Girl, could you be more boring? I’m going holiday shopping, and you’re coming with me."
     a "We’ll see you later, dan!"
-    hide ashleigh-shocked
-#scene BlackScreen
+    hide ashleigh shocked
+scene BlackScreen
 menu: #danpoints #ashleighpoints
         "Buy a present for ashleigh.":
             $ ashleighPoints += 1
@@ -272,38 +272,38 @@ menu: #danpoints #ashleighpoints
             jump BothPresents
 
 label ashleighPresent:
-#scene outside
-show ashleigh-shocked at center
+scene Outside
+show ashleigh shocked at center
 a "Oh. my. GOd. I saw you buy that, and I was SO hoping it was for me."
-hide ashleigh-shocked
-#scene BlackScreen
+hide ashleigh shocked
+scene BlackScreen
 p "Ring-a-ding! 5 Golden Rings!"
 jump Valentines
 
 label danPresent:
-#scene outside
-#show dan at center
+scene Outside
+show dan p1 at center
 d "Oh. You didn’t have to do that. Thanks."
-#hide dan
-#scene BlackScreen
+hide dan p1 with dissolve
+scene BlackScreen
 p "Ring-a-ding! 5 Golden Rings!"
 jump Valentines
 
 label BothPresents:
-#scene outside
-#show Smilingdan at left
-show ashleigh-shocked at right
+scene Outside
+show dan awkward at left
+show ashleigh shocked at right
 d "Oh. You didn’t have to do that. Thanks."
 a "Oh. my. GOd. I saw you buy that, and I was SO hoping it was for me."
-hide Smilingdan
-hide ashleigh-shocked
-#scene BlackScreen
+hide dan awkward with dissolve
+hide ashleigh shocked
+scene BlackScreen
 p "Ring-a-ding! 5 Golden Rings!"
 jump Valentines
 
 label Valentines: # February 14th
     "February 13th. One day before Valentine’s day."
-scene Hallway
+scene hall
 "Oh god, it’s almost Valentine’s day, what should I do?"
 m "I’ve heard that making your own chocolates is better than buying them."
 m "Can’t be that difficult, I’m class president after all"
@@ -319,46 +319,46 @@ menu:
 
 label ashleighChocolate:
 "February 14th.  Valentine's day"
-show ashleigh-intrigued at left
+show ashleigh intrigued at left
 m "Here, ashleigh. I know this is kind of out of the blue, but I made these for you."
 a "are you kidding me? Raspberry chocolates?? Oh, mindy, you know me so well!"
 a "actually...I made some for you too. dark chocolate, of course. I know sweet isn’t your style."
-hide ashleigh-intrigued
-show ashleigh-shocked at center
+hide ashleigh intrigued
+show ashleigh shocked at center
 a "do you like them?"
-hide ashleigh-shocked
-show ashleigh-shocked at right
+hide ashleigh shocked
+show ashleigh shocked at right
 m "Honestly, I love them, but not as much as I love you. I hope that’s okay."
 a "It’s more than okay."
-hide ashleigh-shocked
-show ashleigh-open-arms at center
+hide ashleigh shocked
+show ashleigh open arms at center
 "ashleigh winks at mindy. mindy smiles. She will never forget this moment."
 p "ding-a-ling! Kissing leads to dinging!"
-#scene BlackScreen
+scene BlackScreen
 #"mindy pursues her dream of becoming a neurosurgeon, but her favorite part is that she does so with ashleigh at her side. ashleigh stays with their two dogs, Butch and dan 2.0. Every year they make chocolate for each other."
 return
 
 
 label danChocolate:
 "February 14th.  Valentine's day"
-#show abominationdan at left
+show dan abom at left
 "dan should appreciate these, I hope."
 m "Hey dan, I hope you like chocolate. I made these for you."
-#hide abominationdan
-#show dan at left
+hide dan abom
+show dan p2 at left
 d "Wow, thank you. I tried to make some for you actually...but I accidentally burnt them. and our kitchen. "
 m "Oh, dan, so that’s what that alarm was. You know you can’t cook. I hope you didn’t get in trouble."
 d "It’s not like my parents are around enough to notice that kind of thing."
 d "But seriously, these are great. No one’s ever given me chocolate before."
 m "maybe I’ll cook more for you sometime."
-#hide dan
-#scene BlackScreen
+hide dan with dissolve
+scene BlackScreen
 p "ding-a-ling! Kissing leads to dinging!"
 
 label BigTest: #march 28th
     "march 28th."
     scene classroom
-    #show dan at left
+    show dan p1 at left
     d "Hey, how do you feel about the big test coming up?"
     m "I’ll be fine of course. But do you want to study together beforehand?"
     d "are you sure? Somehow I doubt we’re at the same level."
@@ -377,14 +377,14 @@ label BigTest: #march 28th
             jump danLife
 
 label danLife:
-#hide dan
-#show abominationdan at left
+hide dan p1
+show dan abom at left
 d "What do you mean 'not enough?'"
 m "I feel like I could do more."
 d "But you’ve already done so much for me."
 m "There’s still a little time before graduation."
 "He has no idea how great he can be."
-#hide abominationdan
+hide dan abom
 jump Why
 
 label errands:
@@ -395,15 +395,15 @@ m "You know, you’re actually a great listener. You might make a good therapist
 d "Well, actually, I was thinking of being a therapist one day. I know it’s silly, but…"
 m "It’s not silly at all."
 "He’ll definitely become a great therapist one day. He’s certainly got the patience for it."
-#hide dan
+hide dan p1
 jump Why
 
 label Why: #april 1st
     "april 1st."
-scene hallway
+scene hall
 m "...and then, ashleigh asked me to go to Jake’s party. I keep telling her I don’t want to go. Every time she drinks she clings to me and then pukes."
 m "I’m always the designated driver. It get so annoy-"
-#show abominationdan at center
+show dan abom at center
 d "mindy, why are you with me?"
 menu: #danpoint
     "Is this a prank?":
@@ -419,11 +419,11 @@ menu: #danpoint
         $ danPoints -= 1
         jump Knowledge
 label meaning:
-    #hide abominationdan
-    #show abominationdan at left
+    hide dan abom
+    show dan abom at left
 d "You’re going to college. You know what you’re going to do with your life. I’m nothing to you."
 m "You’re something to me. Yes, I’m going to college, but I care about you, dan."
-#show dan at center
+show dan abom at center
 d "I feel like this can’t last. I can’t keep up with you."
 m "I like you exactly as you are."
 "Like..? Is it more than that?"
@@ -437,7 +437,7 @@ d "Broken?"
 m "You think I didn’t notice the comment about the cafeteria food, dan? I can hear your parents arguing every night. I wanted to help you...fix you."
 d "Fix me? FIX mE? What am I, some broken toy?"
 m "dan, I-"
-#hide abominationdan
+hide dan abom
 d "I’m not some plaything."
 m "dan…"
 "I watched him walk away. He started avoiding me at school."
@@ -450,15 +450,15 @@ else:
     jump ashleighCatty
 
 label ashleighSupportive:
-    #scene Outside
+    scene Outside
     "may 5th."
-    show ashleigh-open-arms at right
+    show ashleigh open arms at right
 a "Oh. my. God. I cannot believe we are finally in our last week of school."
 m "me either! What a long strange journey it’s been."
 a "You’re leaving me so soon! I don’t know what I’m going to do without you."
 m "I’m so so sorry about that. You know it’s always been my dream and girl, you have to follow your dream."
-hide ashleigh-open-arms
-show ashleigh-sobbing at center
+hide ashleigh open arms
+show ashleigh sobbing at center
 a "I know… it just hurts."
 a "Will I see you at the graduation party?"
 menu:
@@ -468,23 +468,23 @@ menu:
         jump ashsupportcont
 
 label ashsupportcont:
-    hide ashleigh-sobbing
-    show ashleigh-shocked at left
+    hide ashleigh sobbing
+    show ashleigh shocked at left
     a "See if dan will dance with you again like he did at Homecoming."
     m "I think we both know how that’ll go."
     "ding-a-ling! This job doesn’t pay enough."
-    hide ashleigh-shocked
+    hide ashleigh shocked
 
 label ashleighCatty:
-    #scene Outside
+    scene Outside
     "may 5th."
-    show ashleigh-apathetic at right
+    show ashleigh apathetic at right
 a "Oh. my. God. I cannot believe we are finally in our last week of school."
 m "me either! What a long strange journey it’s been."
 a "You’re leaving me so soon! I don’t know what I’m going to do without you."
 m "I’m so so sorry about that. You know it’s always been my dream and girl, you have to follow your dream."
-hide ashleigh-apathetic
-show ashleigh-intrigued at center
+hide ashleigh apathetic
+show ashleigh intrigued at center
 a "I know… it just hurts."
 a "Will I see you at the graduation party?"
 menu:
@@ -497,11 +497,11 @@ label cattycontinue:
 a "See if dan will dance with you again like he did at Homecoming."
 m "I think we both know how that’ll go."
 "ding-a-ling! This job doesn’t pay enough."
-hide ashleigh-intrigued
+hide ashleigh intrigued
 
 label Party: #may 20th
     scene Classroom
-#    show dan at center
+    show dan p2 at center
     d "I can’t believe I’m actually looking forward to a party."
     m "me either. Ever since I finished my college applications, I’ve felt like I was on the moon."
     d "You’ll get in for sure. You deserve it. I’m still waiting for mine too, but I have a good feeling about this one."
@@ -534,7 +534,7 @@ label party12:
             jump party13
 
 label party13:
-#    show BlackScreen
+    show BlackScreen
 "dan and mindy leave the classroom for the last time, ready to receive their diplomas. The after party is held at ashleigh’s house later that night."
 
 p "ding-a-ling!"
