@@ -28,13 +28,12 @@ label Opening:
     p "mindy to the Principal's office"
     "mindy gets up from her chair, wondering what Principal Joe wants this time."
 
-    scene hall
+    scene hallway
 
     j "Good morning Mindy! How was your vacation?"
     m "It was nice, but I’m glad to be back. Did you need my help with something?"
     j "Since you’re class president, I was hoping you could show a new student around the school. Try to make him feel welcome."
     j "Dan, come on in."
-
 
     #show abominationdan
 
