@@ -16,6 +16,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
+label hall:
     scene hall
 
     # This shows a character sprite. A placeholder is used, but you can
@@ -47,7 +48,13 @@ label classroomIntroducingAshleigh:
     a "Is he in our grade?"
     a "Doyoureallythinkhelikesthecafeteriafood?"
 
+menu:
+    "I’ve only talked to him once, Ashleigh.":
+        jump hall
+
+    "Idk, he seems ok, I guess...":
+        jump hall
 
     # This ends the game.
 
-    return
+return
