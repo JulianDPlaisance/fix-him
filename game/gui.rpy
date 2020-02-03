@@ -16,7 +16,10 @@ init python:
 ################################################################################
 ## GUI Configuration Variables
 ################################################################################
-
+define config.name = _('Fix Him')
+define gui.choice_button_text_idle_color = '#0000FF'
+define gui.idle_color = '#FFaa00'
+define gui.choice_button_text_hover_color = '#33FF99'
 
 ## Colors ######################################################################
 ##
@@ -469,6 +472,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-
